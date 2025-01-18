@@ -44,10 +44,25 @@ fn main() {
         number -= 1;
     }
 
-    let arr = [1, 1, 2, 3, 5, 8];
+    let mut arr = [1, 1, 2, 3, 5, 8];
+    for i in 0..arr.len() {
+        arr[i] += 1;
+    }
     print!("[");
     for i in arr {
-        print!("{i},")
+        print!("{i},");
     }
     print!("]");
+    println!();
+
+    let mut cnt = 0;
+
+    let result = loop {
+        cnt += 1;
+        if cnt == 10 {
+            break cnt * 2;
+        }
+    };
+
+    println!("result : {result}");
 }
