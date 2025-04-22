@@ -39,5 +39,6 @@ fn gives_ownership() -> String {
 
 fn takes_and_gives_back(mut str: String) -> String {
     str = str + " world!";
+    str.push_str(" 你好，世界！");
     str
 }
