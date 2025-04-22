@@ -16,4 +16,28 @@ fn main(){
         println!("{s1}, world!");
         println!("{s2}, world!");
     }
+
+    {
+        let s1 = gives_ownership();
+        println!("{s1} was moved from gives ownership");
+
+        let mut s2 = String::from("Hello");
+        s2 = takes_and_gives_back(s2);
+        println!("{s2}")
+    }
+
+
+}
+
+fn gives_ownership() -> String {
+
+    let str = String::from("你好");
+
+    str
+
+}
+
+fn takes_and_gives_back(mut str: String) -> String {
+    str = str + " world!";
+    str
 }
